@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Divider, Grid, Header, Icon, List, Placeholder, Search, Segment } from "semantic-ui-react"
+import { Button, Divider, Grid, Header, Icon, Label, List, Menu, Placeholder, Search, Segment, Table } from "semantic-ui-react"
 
 function App() {
   return (
@@ -84,10 +84,57 @@ function App() {
               />
             </List>
           </Grid.Column>
-      </Grid.Row>
+        </Grid.Row>
+        <Grid.Row centered columns={1}>
+          <Grid.Column width={11}>
+            <Table celled>
+              <Table.Header>
+                <Table.Row>
+                  <Table.HeaderCell textAlign="right" colSpan={2}>
+                    <Search placeholder="Search document" />
+                  </Table.HeaderCell>
+                </Table.Row>
+                <Table.Row>
+                  <Table.HeaderCell textAlign="center">Nama Document</Table.HeaderCell>
+                  <Table.HeaderCell textAlign="center">Jenis File</Table.HeaderCell>
+                </Table.Row>
+              </Table.Header>
 
+              <Table.Body>
+                <Table.Row>
+                  <Table.Cell>
+                    <Label ribbom>Panduan Belajar Javascript</Label>
+                  </Table.Cell>
+                  <Table.Cell textAlign="center">PDF</Table.Cell>
+                </Table.Row>
+                <Table.Row>
+                  <Table.Cell>Panduan Belajar CSS</Table.Cell>
+                  <Table.Cell textAlign="center">PDF</Table.Cell>
+                </Table.Row>
+                <Table.Row>
+                  <Table.Cell>Panduan Belajar React JS</Table.Cell>
+                  <Table.Cell textAlign="center">PDF</Table.Cell>
+                </Table.Row>
+              </Table.Body>
 
-    </Grid>
+              <Table.Footer>
+                <Table.Row>
+                  <Table.HeaderCell colSpan={2}>
+                    <Menu floated="right">
+                      <Menu.Item as="a"><Icon name="angle left"/></Menu.Item>
+                      <Menu.Item as="a">1</Menu.Item>
+                      <Menu.Item as="a">2</Menu.Item>
+                      <Menu.Item as="a">3</Menu.Item>
+                      <Menu.Item as="a">4</Menu.Item>
+                      <Menu.Item as="a"><Icon name="angle right"/></Menu.Item>
+                    </Menu>
+                  </Table.HeaderCell>
+                </Table.Row>
+              </Table.Footer>
+            </Table>
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
     </>
   );
 }
